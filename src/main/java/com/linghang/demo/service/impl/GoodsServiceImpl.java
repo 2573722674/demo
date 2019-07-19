@@ -32,9 +32,11 @@ public class GoodsServiceImpl implements GoodsSevice {
 
     @Override
     public Goods deleteGoodsById(int goodsId) {
-        Goods goods = repository.findById(goodsId).orElse(null);
-        repository.deleteById(goodsId);
-        return goods;
+        Goods result = repository.findById(goodsId).orElse(null);
+        if (result != null) {
+            repository.delete(result);
+        }
+        return result;
     }
 
     @Override
@@ -49,7 +51,7 @@ public class GoodsServiceImpl implements GoodsSevice {
     }
 
     @Override
-    public List<Goods> findByName(String userName) {
+    public List<Goods> findByUserName(String userName) {
         return repository.findByUserName(userName);
     }
 
@@ -61,7 +63,10 @@ public class GoodsServiceImpl implements GoodsSevice {
     @Override
     public Goods changeGoodsStatus(int goodsId, int goodsStatus) {
         Goods goods = repository.findById(goodsId).orElse(null);
-        goods.setStatus(goodsStatus);;
+        if (goods == null) {
+            return null;
+        }
+        goods.setGoodsStatus(goodsStatus);;
         repository.save(goods);
         return goods;
     }

@@ -16,7 +16,7 @@ public interface GoodsSevice {
 
     Goods findById(int goodsId);
 
-    List<Goods> findByName(String userName);
+    List<Goods> findByUserName(String userName);
 
     List<Goods> findAll();
 

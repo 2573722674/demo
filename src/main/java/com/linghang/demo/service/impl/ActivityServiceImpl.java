@@ -31,9 +31,12 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-    public Activity deleteActivity(Activity activity) {
-        repository.delete(activity);
-        return activity;
+    public Activity deleteActivityById(int activityId) {
+        Activity result = repository.findById(activityId).orElse(null);
+        if (result != null) {
+            repository.delete(result);
+        }
+        return result;
     }
 
     @Override
@@ -52,8 +55,11 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-    public Activity changeActivityStatus(int acivityId, int activityStatus) {
-        Activity activity = repository.findById(acivityId).orElse(null);
+    public Activity changeActivityStatus(int activityId, int activityStatus) {
+        Activity activity = repository.findById(activityId).orElse(null);
+        if (activity == null) {
+            return null;
+        }
         activity.setActivityStatus(activityStatus);
         repository.save(activity);
         return activity;

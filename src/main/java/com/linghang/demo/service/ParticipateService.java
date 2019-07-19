@@ -8,6 +8,8 @@ public interface ParticipateService {
 
     void joinActivity(String userName, int activityId);
 
+    Participate deleteById(int registrationId);
+
     List<Participate> findByUserName(String userName);
 
     List<Participate> findByActivityId(int activityId);

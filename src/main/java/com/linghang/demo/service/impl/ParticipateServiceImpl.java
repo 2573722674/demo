@@ -21,11 +21,20 @@ public class ParticipateServiceImpl implements ParticipateService {
     }
 
     @Override
-    public Participate joinActivity(String userName, int activityId) {
+    public void joinActivity(String userName, int activityId) {
         Participate participate = new Participate();
         participate.setUserName(userName);
         participate.setActivityId(activityId);
-        return repository.save(participate);
+        repository.save(participate);
+    }
+
+    @Override
+    public Participate deleteById(int registrationId) {
+        Participate result = repository.findById(registrationId).orElse(null);
+        if (result != null) {
+            repository.delete(result);
+        }
+        return result;
     }
 
     @Override

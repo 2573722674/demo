@@ -10,7 +10,7 @@ public interface ActivityService {
 
     Activity updateActivity(Activity activity);
 
-    Activity deleteActivity(Activity activity);
+    Activity deleteActivityById(int activityId);
 
     Activity findById(int activityId);
 
