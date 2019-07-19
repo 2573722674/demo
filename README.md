@@ -19,7 +19,7 @@
 ``` json
 {
     "code": 0,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -46,7 +46,7 @@
 ``` json
 {
     "code": 2,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -67,7 +67,7 @@
 ``` json
 {
     "code": 4,
-    "status": "success",
+    "message": "success",
     "data": [
         {
             "goods_id": 12345,
@@ -117,7 +117,7 @@
 ``` json
 {
     "code": 6,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -152,7 +152,7 @@
 ``` json
 {
     "code": 8,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -173,7 +173,7 @@
 ``` json
 {
     "code": 10,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -194,7 +194,7 @@
 ```json
 {
     "code": 12,
-    "status": "success",
+    "message": "success",
     "data": [
         {
             "goods_id": 12345,
@@ -236,7 +236,7 @@
 ``` json
 {
     "code": 14,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -263,7 +263,7 @@
 ``` json
 {
     "code": 16,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -290,7 +290,7 @@
 ```json
 {
     "code": 18,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -311,7 +311,7 @@
 ```json
 {
     "code": 20,
-    "status": "success",
+    "message": "success",
     "data": [
         {
             "goods_id": 12345,
@@ -348,7 +348,7 @@
 ```json
 {
     "code": 22,
-    "status": "success",
+    "message": "success",
     "data": [
         {
             "activity_id": 12345,
@@ -396,7 +396,7 @@
 ``` json
 {
     "code": 24,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -417,7 +417,7 @@
 ``` json
 {
     "code": 26,
-    "status": "success",
+    "message": "success",
     "data": [
         {
             "activity_id": 12345,
@@ -458,7 +458,7 @@
 ``` json
 {
     "code": 28,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -493,7 +493,7 @@
 ``` json
 {
     "code": 30,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -520,7 +520,7 @@
 ```json
 {
     "code": 32,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -547,7 +547,7 @@
 ``` json
 {
     "code": 34,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -574,7 +574,7 @@
 ```json
 {
     "code": 36,
-    "status": "success"
+    "message": "success"
 }
 ```
 
@@ -595,7 +595,7 @@
 ``` json
 {
     "code": 38,
-    "status": "success",
+    "message": "success",
     "data": [
         {
             "activity_id": 12345,
