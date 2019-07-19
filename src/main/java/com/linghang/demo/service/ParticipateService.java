@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ParticipateService {
 
-    Participate joinActivity(String userName, int activityId);
+    void joinActivity(String userName, int activityId);
 
     List<Participate> findByUserName(String userName);
 
