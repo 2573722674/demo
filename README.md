@@ -80,7 +80,7 @@
             "update_time": "2000-08-01 12:45"
         },
         {
-            ...
+            
         }
     ]
 }
@@ -132,6 +132,8 @@
 #### 请求
 
 > **POST	/goods/update**
+>
+> 
 >
 > **goods_id = 商品id**
 >
@@ -205,7 +207,7 @@
             "goods_status": 2
         },
         {
-            ...
+            
         }
     ]
 }
@@ -222,6 +224,8 @@
 #### 请求
 
 > **POST	/goods/status**
+>
+> 
 >
 > **goods_id = 商品id**
 >
@@ -248,6 +252,8 @@
 
 > **POST	/goods/buy**
 >
+> 
+>
 > **user_name = 用户名**
 >
 > **goods_id = 物品id**
@@ -272,6 +278,8 @@
 #### 请求
 
 > **POST	/goods/cancel**
+>
+> 
 >
 > **user_name = 用户名**
 >
@@ -317,7 +325,7 @@
             "goods_status": 2
         },
         {
-            ...
+            
         }
     ]
 }
@@ -351,7 +359,7 @@
             "activity_detail": "abcde"
         },
         {
-            ...
+            
         }
     ]
 }
@@ -368,6 +376,8 @@
 #### 请求
 
 > **POST	/activity/post**
+>
+> 
 >
 > **user_name = 用户名**
 >
@@ -415,11 +425,11 @@
             "activity_name": "activity",
             "start_time": "xxxx-xx-xx xx:xx",
             "end_time": "xxxx-xx-xx xx:xx",
-            "activity_detail": "abcde"
+            "activity_detail": "abcde",
             "activity_status": 2
         },
         {
-            ...
+            
         }
     ]
 }
@@ -435,7 +445,13 @@
 
 #### 请求
 
-> **GET	/activity/delete?activity_id=活动id**
+> **POST	/activity/delete**
+>
+> 
+>
+> **user_name = 用户名**
+>
+> **ctivity_id = 活动id**
 
 #### 返回
 
@@ -457,6 +473,8 @@
 #### 请求
 
 > **POST	/activity/update**
+>
+> 
 >
 > **activity_id = 活动id**
 >
@@ -491,6 +509,8 @@
 
 > **POST	/activity/status**
 >
+> 
+>
 > **activity_id = 活动id**
 >
 > **activity_status = 活动状态**
@@ -516,6 +536,8 @@
 
 > **POST	/activity/join**
 >
+> 
+>
 > **user_name = 用户名**
 >
 > **activiti_id = 活动id**
@@ -540,6 +562,8 @@
 #### 请求
 
 > **POST	/activity/cancel**
+>
+> 
 >
 > **user_name = 用户名**
 >
@@ -579,11 +603,11 @@
             "activity_name": "activity",
             "start_time": "xxxx-xx-xx xx:xx",
             "end_time": "xxxx-xx-xx xx:xx",
-            "activity_detail": "abcde"
+            "activity_detail": "abcde",
             "activity_status": 2
         },
         {
-            ...
+            
         }
     ]
 }
