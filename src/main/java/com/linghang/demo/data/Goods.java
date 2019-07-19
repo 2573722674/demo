@@ -33,7 +33,7 @@ public class Goods {
 
     private String goodsImageUrl;
 
-    private Date creatTime;
+    private Date createTime;
 
     private Date updateTime;
 
