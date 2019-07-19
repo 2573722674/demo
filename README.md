@@ -163,8 +163,6 @@
 > **goods_detail = 商品详细信息**
 >
 > **goods_image_url = 商品图片地址**
->
-> **goods_status = 商品状态(0, 1)上下架**
 
 #### 返回
 
