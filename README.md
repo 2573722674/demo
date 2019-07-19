@@ -200,7 +200,7 @@
             "goods_price": 30.50,
             "goods_detail": "abcdefg",
             "goods_image_url": "http://xxx.png",
-            "creat_time": "2000-08-01 12:45",
+            "create_time": "2000-08-01 12:45",
             "update_time": "2000-08-01 12:45",
             "goods_status": 2
         },
@@ -534,7 +534,7 @@
 >
 > **user_name = 用户名**
 >
-> **activiti_id = 活动id**
+> **activity_id = 活动id**
 
 #### 返回
 
@@ -561,7 +561,7 @@
 >
 > **user_name = 用户名**
 >
-> **activiti_id = 活动id**
+> **activity_id = 活动id**
 
 #### 返回
 
