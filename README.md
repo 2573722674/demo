@@ -1,0 +1,591 @@
+# API接口
+
+
+
+## 登录
+
+#### 请求
+
+> **POST	/login**
+>
+> 
+>
+> **user_name = 用户名**
+>
+> **password = 密码**
+
+#### 返回
+
+``` json
+{
+    "code": 0,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 注册
+
+#### 请求
+
+> **POST	/register**
+>
+> 
+>
+> **user_name = 用户名**
+>
+> **password = 密码**
+
+#### 返回
+
+``` json
+{
+    "code": 2,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 查看在售商品
+
+#### 请求
+
+> **GET	/goods/selling**
+
+#### 返回
+
+``` json
+{
+    "code": 4,
+    "status": "success",
+    "data": [
+        {
+            "goods_id": 12345,
+            "user_name": "yzy",
+            "goods_name": "abc",
+            "goods_price": 30.50,
+            "goods_detail": "abcdefg",
+            "goods_image_url": "http://xxx.png",
+            "creat_time": "2000-08-01 12:45",
+            "update_time": "2000-08-01 12:45"
+        },
+        {
+            ...
+        }
+    ]
+}
+```
+
+
+
+---
+
+
+
+## 发布物品信息
+
+#### 请求
+
+> **POST	/goods/post**
+>
+> 
+>
+> **user_name = 商品发布人姓名**
+>
+> **goods_name = 商品名称**
+>
+> **goods_price = 商品价格**
+>
+> **goods_detail = 商品详细信息**
+>
+> **goods_image_url = 商品图片地址**
+>
+> **goods_status = 商品状态(0, 1)上下架**
+
+#### 返回
+
+``` json
+{
+    "code": 6,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 更新物品信息
+
+#### 请求
+
+> **POST	/goods/update**
+>
+> **goods_id = 商品id**
+>
+> **goods_name = 商品名称**
+>
+> **goods_price = 商品价格**
+>
+> **goods_detail = 商品详细信息**
+>
+> **goods_image_url = 商品图片地址**
+>
+> **goods_status = 商品状态(0, 1)上下架**
+
+#### 返回
+
+``` json
+{
+    "code": 8,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 删除物品信息
+
+#### 请求
+
+> **GET	/goods/delete?goods_id=商品id**
+
+#### 返回
+
+``` json
+{
+    "code": 10,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 查看自己发布的物品信息
+
+#### 请求
+
+> **GET	/goods/list?user_name=用户名**
+
+#### 返回
+
+```json
+{
+    "code": 12,
+    "status": "success",
+    "data": [
+        {
+            "goods_id": 12345,
+            "goods_name": "abc",
+            "goods_price": 30.50,
+            "goods_detail": "abcdefg",
+            "goods_image_url": "http://xxx.png",
+            "creat_time": "2000-08-01 12:45",
+            "update_time": "2000-08-01 12:45",
+            "goods_status": 2
+        },
+        {
+            ...
+        }
+    ]
+}
+```
+
+
+
+---
+
+
+
+## 修改物品状态
+
+#### 请求
+
+> **POST	/goods/status**
+>
+> **goods_id = 商品id**
+>
+> **goods_status = 商品状态**
+
+#### 返回
+
+``` json
+{
+    "code": 14,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 购买商品
+
+#### 请求
+
+> **POST	/goods/buy**
+>
+> **user_name = 用户名**
+>
+> **goods_id = 物品id**
+
+#### 返回
+
+``` json
+{
+    "code": 16,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 取消购买
+
+#### 请求
+
+> **POST	/goods/cancel**
+>
+> **user_name = 用户名**
+>
+> **goods_id = 物品id**
+
+#### 返回
+
+```json
+{
+    "code": 18,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 查询已购买商品
+
+#### 请求
+
+> **GET	/goods/bought?user_name=用户名**
+
+#### 返回
+
+```json
+{
+    "code": 20,
+    "status": "success",
+    "data": [
+        {
+            "goods_id": 12345,
+            "user_name": "yzy",
+            "goods_name": "abc",
+            "goods_price": 30.50,
+            "goods_detail": "abcdefg",
+            "goods_image_url": "http://xxx.png",
+            "creat_time": "2000-08-01 12:45",
+            "update_time": "2000-08-01 12:45",
+            "goods_status": 2
+        },
+        {
+            ...
+        }
+    ]
+}
+```
+
+
+
+---
+
+
+
+## 查看未结束活动
+
+#### 请求
+
+> **GET	/activity/active**
+
+#### 返回
+
+```json
+{
+    "code": 22,
+    "status": "success",
+    "data": [
+        {
+            "activity_id": 12345,
+            "user_name": "yzy",
+            "activity_name": "activity",
+            "start_time": "xxxx-xx-xx xx:xx",
+            "end_time": "xxxx-xx-xx xx:xx",
+            "activity_detail": "abcde"
+        },
+        {
+            ...
+        }
+    ]
+}
+```
+
+
+
+---
+
+
+
+## 发布活动
+
+#### 请求
+
+> **POST	/activity/post**
+>
+> **user_name = 用户名**
+>
+> **activity_name = 活动名称**
+>
+> **start_time = 开始时间**
+>
+> **end_time = 结束时间**
+>
+> **activity_detail = 活动详情**
+>
+> **activity_status = 活动状态**
+
+#### 返回
+
+``` json
+{
+    "code": 24,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 查看自己发布的活动
+
+#### 请求
+
+> **GET	/activity/list?user_name=用户名**
+
+#### 返回
+
+``` json
+{
+    "code": 26,
+    "status": "success",
+    "data": [
+        {
+            "activity_id": 12345,
+            "activity_name": "abc",
+            "activity_name": "activity",
+            "start_time": "xxxx-xx-xx xx:xx",
+            "end_time": "xxxx-xx-xx xx:xx",
+            "activity_detail": "abcde"
+            "activity_status": 2
+        },
+        {
+            ...
+        }
+    ]
+}
+```
+
+
+
+---
+
+
+
+## 删除活动
+
+#### 请求
+
+> **GET	/activity/delete?activity_id=活动id**
+
+#### 返回
+
+``` json
+{
+    "code": 28,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 更新活动
+
+#### 请求
+
+> **POST	/activity/update**
+>
+> **activity_id = 活动id**
+>
+> **activity_name = 活动名称**
+>
+> **start_time = 开始时间**
+>
+> **end_time = 结束时间**
+>
+> **activity_detail = 活动详情**
+>
+> **activity_status = 活动状态**
+
+#### 返回
+
+``` json
+{
+    "code": 30,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 更改活动状态
+
+#### 请求
+
+> **POST	/activity/status**
+>
+> **activity_id = 活动id**
+>
+> **activity_status = 活动状态**
+
+#### 返回
+
+```json
+{
+    "code": 32,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 参加活动
+
+#### 请求
+
+> **POST	/activity/join**
+>
+> **user_name = 用户名**
+>
+> **activiti_id = 活动id**
+
+#### 返回
+
+``` json
+{
+    "code": 34,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 取消参加活动
+
+#### 请求
+
+> **POST	/activity/cancel**
+>
+> **user_name = 用户名**
+>
+> **activiti_id = 活动id**
+
+#### 返回
+
+```json
+{
+    "code": 36,
+    "status": "success"
+}
+```
+
+
+
+---
+
+
+
+## 查看已参加活动
+
+#### 请求
+
+> **GET	/activity/joined?user_name=用户名**
+
+#### 返回
+
+``` json
+{
+    "code": 38,
+    "status": "success",
+    "data": [
+        {
+            "activity_id": 12345,
+            "activity_name": "abc",
+            "activity_name": "activity",
+            "start_time": "xxxx-xx-xx xx:xx",
+            "end_time": "xxxx-xx-xx xx:xx",
+            "activity_detail": "abcde"
+            "activity_status": 2
+        },
+        {
+            ...
+        }
+    ]
+}
+```
+
