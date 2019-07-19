@@ -31,12 +31,12 @@ public class Goods {
 
     private String goodsDetail;
 
-    private String goodsImageURL;
+    private String goodsImageUrl;
 
     private Date creatTime;
 
     private Date updateTime;
 
-    private int status;
+    private int goodsStatus;
 
 }

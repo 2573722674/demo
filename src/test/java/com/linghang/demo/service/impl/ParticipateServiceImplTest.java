@@ -26,6 +26,7 @@ public class ParticipateServiceImplTest {
 
     @Test
     public void findByUseName() {
+        System.out.println(participateService.findByUserName("yzy"));
     }
 
     @Test

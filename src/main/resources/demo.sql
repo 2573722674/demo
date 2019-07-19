@@ -15,7 +15,7 @@ CREATE TABLE `goods`
     `goods_price`     DECIMAL(8, 2) NOT NULL,
     `goods_detail`    VARCHAR(128),
     `goods_image_url` VARCHAR(128),
-    `creat_time`      TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `create_time`     TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `update_time`     TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     `goods_status`    TINYINT(3)    NOT NULL,
     PRIMARY KEY (`goods_id`),
@@ -48,3 +48,15 @@ CREATE TABLE `participate`
     KEY `idx_activity_id` (`activity_id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+
+CREATE TABLE `cart`
+(
+    `cart_id`   INT         NOT NULL AUTO_INCREMENT,
+    `user_name` VARCHAR(16) NOT NULL,
+    `goods_id`  INT         NOT NULL,
+    `add_time`  TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`cart_id`),
+    KEY `idx_user_name` (`user_name`),
+    KEY `idx_goods_id` (`goods_id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8
