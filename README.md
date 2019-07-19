@@ -18,8 +18,8 @@
 
 ``` json
 {
-    "code": 0,
-    "message": "success"
+    "code": 1,
+    "message": "密码错误"
 }
 ```
 
@@ -76,8 +76,6 @@
             "goods_price": 30.50,
             "goods_detail": "abcdefg",
             "goods_image_url": "http://xxx.png",
-            "creat_time": "2000-08-01 12:45",
-            "update_time": "2000-08-01 12:45"
         },
         {
             
@@ -315,13 +313,10 @@
     "data": [
         {
             "goods_id": 12345,
-            "user_name": "yzy",
             "goods_name": "abc",
             "goods_price": 30.50,
             "goods_detail": "abcdefg",
             "goods_image_url": "http://xxx.png",
-            "creat_time": "2000-08-01 12:45",
-            "update_time": "2000-08-01 12:45",
             "goods_status": 2
         },
         {
@@ -421,7 +416,6 @@
     "data": [
         {
             "activity_id": 12345,
-            "activity_name": "abc",
             "activity_name": "activity",
             "start_time": "xxxx-xx-xx xx:xx",
             "end_time": "xxxx-xx-xx xx:xx",
@@ -599,7 +593,7 @@
     "data": [
         {
             "activity_id": 12345,
-            "activity_name": "abc",
+            "user_name": "abc",
             "activity_name": "activity",
             "start_time": "xxxx-xx-xx xx:xx",
             "end_time": "xxxx-xx-xx xx:xx",
