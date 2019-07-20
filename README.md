@@ -61,6 +61,8 @@
 > **user_name = 用户名**
 >
 > **password = 密码**
+>
+> **user_image=图片文件**
 
 #### 返回
 
@@ -127,9 +129,9 @@
 >
 > **goods_detail = 商品详细信息**
 >
-> **goods_image_url = 商品图片地址**
->
 > **goods_status = 商品状态(0, 1)上下架**
+>
+> **goods_image = 商品图片文件**
 
 #### 返回
 
@@ -161,8 +163,6 @@
 > **goods_price = 商品价格**
 >
 > **goods_detail = 商品详细信息**
->
-> **goods_image_url = 商品图片地址**
 
 #### 返回
 
