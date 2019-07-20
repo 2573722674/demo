@@ -3,7 +3,9 @@ package com.linghang.demo.controller;
 import com.linghang.demo.DTO.GoodsDTO;
 import com.linghang.demo.VO.ResultVO;
 import com.linghang.demo.data.Goods;
+import com.linghang.demo.service.CartService;
 import com.linghang.demo.service.GoodsSevice;
+import com.linghang.demo.service.ParticipateService;
 import com.linghang.demo.util.VOToJson;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +21,14 @@ public class GoodsController {
 
     private final GoodsSevice goodsSevice;
 
+    private final CartService cartService;
+
     @Autowired
-    public GoodsController(GoodsSevice goodsSevice) {
+    public GoodsController(GoodsSevice goodsSevice, CartService cartService) {
         this.goodsSevice = goodsSevice;
+        this.cartService = cartService;
     }
+
 
     @PostMapping("/post")
     public String post(@RequestParam("user_name") String userName,
@@ -130,5 +136,22 @@ public class GoodsController {
         return VOToJson.resultVOToJson(resultVO);
     }
 
+    @PostMapping("/buy")
+    public String buy(@RequestParam("user_name") String userName,
+                      @RequestParam("goods_id") int goodsId) {
+        ResultVO<Goods> resultVO = new ResultVO<>();
+        resultVO.setData(null);
+        Goods goods = goodsSevice.findById(goodsId);
+        if (goods == null) {
+            resultVO.setCode(1);
+            resultVO.setMessage("商品不存在");
+        } else {
+            goods.setGoodsStatus(1);
+            cartService.buy(userName, goodsId);
+            resultVO.setCode(0);
+            resultVO.setMessage("购买成功");
+        }
+        return VOToJson.resultVOToJson(resultVO);
+    }
 
 }
