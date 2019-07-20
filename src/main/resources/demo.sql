@@ -9,7 +9,7 @@ CREATE TABLE `user`
 
 CREATE TABLE `goods`
 (
-    `goods_id`        INT           NOT NULL,
+    `goods_id`        INT           NOT NULL AUTO_INCREMENT,
     `user_name`       VARCHAR(16)   NOT NULL,
     `goods_name`      VARCHAR(16)   NOT NULL,
     `goods_price`     DECIMAL(8, 2) NOT NULL,

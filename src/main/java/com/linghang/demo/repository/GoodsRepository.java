@@ -9,4 +9,6 @@ public interface GoodsRepository extends JpaRepository<Goods, Integer> {
 
     List<Goods> findByUserName(String userName);
 
+    List<Goods> findByGoodsStatus(int goodsStatus);
+
 }

@@ -61,12 +61,18 @@ public class GoodsServiceImpl implements GoodsSevice {
     }
 
     @Override
+    public List<Goods> findOnSell() {
+        return repository.findByGoodsStatus(0);
+    }
+
+    @Override
     public Goods changeGoodsStatus(int goodsId, int goodsStatus) {
         Goods goods = repository.findById(goodsId).orElse(null);
         if (goods == null) {
             return null;
         }
-        goods.setGoodsStatus(goodsStatus);;
+        goods.setGoodsStatus(goodsStatus);
+        ;
         repository.save(goods);
         return goods;
     }

@@ -5,11 +5,11 @@ import com.linghang.demo.data.User;
 import com.linghang.demo.service.UserService;
 import com.linghang.demo.util.VOToJson;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
@@ -39,19 +39,23 @@ public class UserController {
     }
 
     @PostMapping("/register")
+    @ResponseBody
     public String register(@RequestParam("user_name") String userName,
-                           @RequestParam("password") String password) {
-        ResultVO resultVO = new ResultVO();
+                           @RequestParam("password") String password,
+                           @RequestParam("user_image") MultipartFile file) {
+        ResultVO<User> resultVO = new ResultVO<>();
         resultVO.setData(null);
         User user = userService.findByName(userName);
         if (user != null) {
             resultVO.setCode(1);
             resultVO.setMessage("用户名已被注册");
+        } else {
+            user = new User(userName, password, "http://");
+            userService.register(user);
+            resultVO.setCode(0);
+            resultVO.setMessage("注册成功");
         }
-        user = new User(userName, password, "http://");
-        userService.register(user);
-        resultVO.setCode(0);
-        resultVO.setMessage("注册成功");
+        //TODO 文件处理
         return VOToJson.resultVOToJson(resultVO);
     }
 

@@ -20,6 +20,8 @@ public interface GoodsSevice {
 
     List<Goods> findAll();
 
+    List<Goods> findOnSell();
+
     Goods changeGoodsStatus(int goodsId, int goodsStatus);
 
 }
