@@ -3,6 +3,7 @@ package com.linghang.demo.util;
 import com.linghang.demo.VO.GoodsVO;
 import com.linghang.demo.VO.ResultVO;
 import com.linghang.demo.data.Goods;
+import com.linghang.demo.data.User;
 import com.linghang.demo.service.GoodsSevice;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,20 +22,8 @@ public class VOToJsonTest {
 
     @Test
     public void resultVOToJson() {
-        ResultVO resultVO = new ResultVO(39, "error", null);
+        ResultVO<User> resultVO = new ResultVO<>(39, "error", null);
         System.out.println(VOToJson.resultVOToJson(resultVO));
     }
 
-    @Test
-    public void goodsVOToJson() {
-        GoodsVO goodsVO = new GoodsVO();
-        goodsVO.setCode(0);
-        goodsVO.setMessage("ok");
-        List<Goods> goods = goodsSevice.findByUserName("he");
-        if (goods.isEmpty()) {
-            goods = null;
-        }
-        goodsVO.setData(goods);
-        System.out.println(VOToJson.goodsVOToJson(goodsVO));
-    }
 }
