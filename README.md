@@ -93,12 +93,12 @@
     "message": "success",
     "data": [
         {
-            "goods_id": 12345,
-            "user_name": "yzy",
-            "goods_name": "abc",
-            "goods_price": 30.50,
-            "goods_detail": "abcdefg",
-            "goods_image_url": "http://xxx.png",
+            "goodsId": 12345,
+            "userName": "yzy",
+            "goodsName": "abc",
+            "goodsPrice": 30.50,
+            "goodsDetail": "abcdefg",
+            "goodsImageUrl": "http://xxx.png",
         },
         {
             
@@ -214,14 +214,14 @@
     "message": "success",
     "data": [
         {
-            "goods_id": 12345,
-            "goods_name": "abc",
-            "goods_price": 30.50,
-            "goods_detail": "abcdefg",
-            "goods_image_url": "http://xxx.png",
-            "create_time": "2000-08-01 12:45",
-            "update_time": "2000-08-01 12:45",
-            "goods_status": 2
+            "goodsId": 12345,
+            "goodsName": "abc",
+            "goodsPrice": 30.50,
+            "goodsDetail": "abcdefg",
+            "goodsImageUrl": "http://xxx.png",
+            "createTime": "2000-08-01 12:45",
+            "updateTime": "2000-08-01 12:45",
+            "goodsStatus": 2
         },
         {
             
@@ -331,12 +331,12 @@
     "message": "success",
     "data": [
         {
-            "goods_id": 12345,
-            "goods_name": "abc",
-            "goods_price": 30.50,
-            "goods_detail": "abcdefg",
-            "goods_image_url": "http://xxx.png",
-            "goods_status": 2
+            "goodsId": 12345,
+            "goodsName": "abc",
+            "goodsPrice": 30.50,
+            "goodsDetail": "abcdefg",
+            "goodsImageUrl": "http://xxx.png",
+            "goodsStatus": 2
         },
         {
             
@@ -365,12 +365,12 @@
     "message": "success",
     "data": [
         {
-            "activity_id": 12345,
-            "user_name": "yzy",
-            "activity_name": "activity",
-            "start_time": "xxxx-xx-xx xx:xx",
-            "end_time": "xxxx-xx-xx xx:xx",
-            "activity_detail": "abcde"
+            "activityId": 12345,
+            "userName": "yzy",
+            "activityName": "activity",
+            "startTime": "xxxx-xx-xx xx:xx",
+            "endTime": "xxxx-xx-xx xx:xx",
+            "activityDetail": "abcde"
         },
         {
             
@@ -434,12 +434,12 @@
     "message": "success",
     "data": [
         {
-            "activity_id": 12345,
-            "activity_name": "activity",
-            "start_time": "xxxx-xx-xx xx:xx",
-            "end_time": "xxxx-xx-xx xx:xx",
-            "activity_detail": "abcde",
-            "activity_status": 2
+            "activityId": 12345,
+            "activityName": "activity",
+            "startTime": "xxxx-xx-xx xx:xx",
+            "endTime": "xxxx-xx-xx xx:xx",
+            "activityDetail": "abcde",
+            "activityStatus": 2
         },
         {
             
@@ -611,13 +611,13 @@
     "message": "success",
     "data": [
         {
-            "activity_id": 12345,
-            "user_name": "abc",
-            "activity_name": "activity",
-            "start_time": "xxxx-xx-xx xx:xx",
-            "end_time": "xxxx-xx-xx xx:xx",
-            "activity_detail": "abcde",
-            "activity_status": 2
+            "activityId": 12345,
+            "userName": "abc",
+            "activityName": "activity",
+            "startTime": "xxxx-xx-xx xx:xx",
+            "endTime": "xxxx-xx-xx xx:xx",
+            "activityDetail": "abcde",
+            "activityStatus": 2
         },
         {
             
