@@ -6,7 +6,7 @@
 
 #### 请求
 
-> **POST	/login**
+> **POST	/user/login**
 >
 > 
 >
@@ -54,7 +54,7 @@
 
 #### 请求
 
-> **POST	/register**
+> **POST	/user/register**
 >
 > 
 >
