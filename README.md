@@ -183,7 +183,11 @@
 
 #### 请求
 
-> **GET	/goods/delete?goods_id=商品id**
+> **POST	/goods/delete**
+>
+> **goods_id = 商品Id**
+>
+> **user_name = 用户名**
 
 #### 返回
 
