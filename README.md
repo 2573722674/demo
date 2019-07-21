@@ -40,7 +40,7 @@
 ```json
 {
     "code": 0,
-    "message": "头像地址",
+    "message": "头像地址"
 }
 ```
 
@@ -523,7 +523,7 @@
 >
 > **user_name = 用户名**
 >
-> **ctivity_id = 活动id**
+> **activity_id = 活动id**
 
 #### 返回
 
@@ -557,8 +557,6 @@
 > **end_time = 结束时间**
 >
 > **activity_detail = 活动详情**
->
-> **activity_status = 活动状态**
 
 #### 返回
 
