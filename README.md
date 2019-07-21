@@ -61,8 +61,6 @@
 > **user_name = 用户名**
 >
 > **password = 密码**
->
-> **user_image=图片文件**
 
 #### 返回
 
@@ -99,9 +97,6 @@
             "goodsPrice": 30.50,
             "goodsDetail": "abcdefg",
             "goodsImageUrl": "http://xxx.png",
-        },
-        {
-            
         }
     ]
 }
@@ -130,8 +125,6 @@
 > **goods_detail = 商品详细信息**
 >
 > **goods_status = 商品状态(0, 1)上下架**
->
-> **goods_image = 商品图片文件**
 
 #### 返回
 
@@ -226,9 +219,6 @@
             "createTime": "2000-08-01 12:45",
             "updateTime": "2000-08-01 12:45",
             "goodsStatus": 2
-        },
-        {
-            
         }
     ]
 }
@@ -336,14 +326,12 @@
     "data": [
         {
             "goodsId": 12345,
+            "user_name": "yzy",
             "goodsName": "abc",
             "goodsPrice": 30.50,
             "goodsDetail": "abcdefg",
             "goodsImageUrl": "http://xxx.png",
             "goodsStatus": 2
-        },
-        {
-            
         }
     ]
 }
@@ -375,9 +363,6 @@
             "startTime": "xxxx-xx-xx xx:xx",
             "endTime": "xxxx-xx-xx xx:xx",
             "activityDetail": "abcde"
-        },
-        {
-            
         }
     ]
 }
@@ -444,9 +429,6 @@
             "endTime": "xxxx-xx-xx xx:xx",
             "activityDetail": "abcde",
             "activityStatus": 2
-        },
-        {
-            
         }
     ]
 }
@@ -622,9 +604,6 @@
             "endTime": "xxxx-xx-xx xx:xx",
             "activityDetail": "abcde",
             "activityStatus": 2
-        },
-        {
-            
         }
     ]
 }
