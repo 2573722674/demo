@@ -14,4 +14,6 @@ public interface ParticipateService {
 
     List<Participate> findByActivityId(int activityId);
 
+    Participate findByUserNameAndActivityId(String userName, int activityId);
+
 }

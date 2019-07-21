@@ -1,5 +1,7 @@
 package com.linghang.demo.data;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.linghang.demo.util.serializer.DateToLongSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +26,7 @@ public class Cart {
 
     private int goodsId;
 
+    @JsonSerialize(using = DateToLongSerializer.class)
     private Date addTime;
 
 }

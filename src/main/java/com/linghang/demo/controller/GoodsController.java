@@ -1,6 +1,6 @@
 package com.linghang.demo.controller;
 
-import com.linghang.demo.DTO.GoodsDTO;
+import com.linghang.demo.Form.GoodsForm;
 import com.linghang.demo.VO.ResultVO;
 import com.linghang.demo.data.Cart;
 import com.linghang.demo.data.Goods;
@@ -32,34 +32,27 @@ public class GoodsController {
     public ResultVO<Goods> post(@RequestParam("user_name") String userName,
                        @RequestParam("goods_name") String goodsName,
                        @RequestParam("goods_price") BigDecimal goodsPrice,
-                       @RequestParam("goods_detail") String goodsDetail,
-                       @RequestParam("goods_status") Integer goodsStatus) {
-        ResultVO<Goods> resultVO = new ResultVO<>();
-        resultVO.setData(null);
+                       @RequestParam("goods_detail") String goodsDetail) {
         Goods goods = new Goods();
-        GoodsDTO goodsDTO = new GoodsDTO(0, userName, goodsName, goodsPrice, goodsDetail, "http://", goodsStatus);
-        BeanUtils.copyProperties(goodsDTO, goods);
+        GoodsForm goodsForm = new GoodsForm(0, userName, goodsName, goodsPrice, goodsDetail, "http://", 0);
+        BeanUtils.copyProperties(goodsForm, goods);
         goods = goodsSevice.postGoods(goods);
         if (goods == null) {
-            resultVO.setCode(1);
-            resultVO.setMessage("发布商品失败");
+            return new ResultVO<>(1, "发布商品失败", null);
         } else {
-            resultVO.setCode(0);
-            resultVO.setMessage("发布商品成功");
+            return new ResultVO<>(0, "发布商品成功", null);
         }
-        return resultVO;
     }
 
     @GetMapping("/selling")
     public ResultVO<Goods> selling() {
         //TODO 用户头像
         List<Goods> goodsList = goodsSevice.findOnSell();
-        ResultVO<Goods> resultVO = new ResultVO<>();
-        resultVO.setCode(0);
-        resultVO.setMessage("查询成功");
-        resultVO.setData(goodsList);
-//        return VOToJson.resultVOToJson(resultVO);
-        return resultVO;
+        if (goodsList.isEmpty()) {
+            return new ResultVO<>(0, "无在售商品", goodsList);
+        } else {
+            return new ResultVO<>(0, "查询成功", goodsList);
+        }
     }
 
     @PostMapping("/update")

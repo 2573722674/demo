@@ -11,4 +11,6 @@ public interface ParticipateRepository extends JpaRepository<Participate, Intege
 
     List<Participate> findByActivityId(int activityId);
 
+    Participate findByUserNameAndActivityId(String userName, int activityId);
+
 }

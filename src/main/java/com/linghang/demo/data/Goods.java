@@ -1,6 +1,8 @@
 package com.linghang.demo.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.linghang.demo.util.serializer.DateToLongSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,8 +36,10 @@ public class Goods {
 
     private String goodsImageUrl;
 
+    @JsonSerialize(using = DateToLongSerializer.class)
     private Date createTime;
 
+    @JsonSerialize(using = DateToLongSerializer.class)
     private Date updateTime;
 
     private int goodsStatus;

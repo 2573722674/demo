@@ -46,4 +46,9 @@ public class ParticipateServiceImpl implements ParticipateService {
     public List<Participate> findByActivityId(int activityId) {
         return repository.findByActivityId(activityId);
     }
+
+    @Override
+    public Participate findByUserNameAndActivityId(String userName, int activityId) {
+        return repository.findByUserNameAndActivityId(userName, activityId);
+    }
 }

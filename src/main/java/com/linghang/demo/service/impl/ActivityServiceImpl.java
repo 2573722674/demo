@@ -55,6 +55,11 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
+    public List<Activity> findByActivityStatus(int activityStatus) {
+        return repository.findByActivityStatus(activityStatus);
+    }
+
+    @Override
     public Activity changeActivityStatus(int activityId, int activityStatus) {
         Activity activity = repository.findById(activityId).orElse(null);
         if (activity == null) {

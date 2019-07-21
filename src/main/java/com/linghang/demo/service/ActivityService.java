@@ -18,6 +18,8 @@ public interface ActivityService {
 
     List<Activity> findAll();
 
-    Activity changeActivityStatus(int acivityId, int activityStatus);
+    List<Activity> findByActivityStatus(int activityStatus);
+
+    Activity changeActivityStatus(int activityId, int activityStatus);
 
 }

@@ -1,4 +1,4 @@
-package com.linghang.demo.DTO;
+package com.linghang.demo.Form;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
-public class GoodsDTO {
+public class GoodsForm {
 
     private int goodsId;
 
