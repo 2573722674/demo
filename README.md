@@ -39,7 +39,7 @@
 
 ```json
 {
-    "code": 1,
+    "code": 0,
     "message": "头像地址",
 }
 ```
@@ -68,6 +68,33 @@
 {
     "code": 2,
     "message": "success"
+}
+```
+
+
+
+---
+
+
+
+## 上传用户头像
+
+#### 请求
+
+> **POST	/user/image**
+>
+> 
+>
+> **user_name = 用户名**
+>
+> **user_image = 图片文件**
+
+#### 返回
+
+``` json
+{
+    "code": 0,
+    "message": "success",
 }
 ```
 
@@ -108,6 +135,27 @@
 
 
 
+## 获取商品图片
+
+#### 请求
+
+> **GET	/goods/image?goods_id=商品id**
+
+#### 返回
+
+``` json
+{
+    "code": 0,
+    "message": "图片地址",
+}
+```
+
+
+
+---
+
+
+
 ## 发布物品信息
 
 #### 请求
@@ -123,8 +171,6 @@
 > **goods_price = 商品价格**
 >
 > **goods_detail = 商品详细信息**
->
-> **goods_status = 商品状态(0, 1)上下架**
 
 #### 返回
 
@@ -132,6 +178,33 @@
 {
     "code": 6,
     "message": "success"
+}
+```
+
+
+
+---
+
+
+
+## 上传商品图片
+
+#### 请求
+
+> **POST	/goods/image**
+>
+> 
+>
+> **goods_id = 商品id**
+>
+> **goods_image = 图片文件**
+
+#### 返回
+
+``` json
+{
+    "code": 0,
+    "message": "success",
 }
 ```
 
