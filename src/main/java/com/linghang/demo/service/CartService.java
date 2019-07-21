@@ -14,4 +14,6 @@ public interface CartService {
 
     List<Cart> findByGoodsId(int goodsId);
 
+    Cart findByUserNameAndGoodsId(String userName, int goodsId);
+
 }

@@ -20,9 +20,9 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam("user_name") String userName,
+    public ResultVO<User> login(@RequestParam("user_name") String userName,
                         @RequestParam("password") String password) {
-        ResultVO resultVO = new ResultVO();
+        ResultVO<User> resultVO = new ResultVO<>();
         resultVO.setData(null);
         User user = userService.findByName(userName);
         if (user == null) {
@@ -35,14 +35,13 @@ public class UserController {
             resultVO.setCode(0);
             resultVO.setMessage("登录成功");
         }
-        return VOToJson.resultVOToJson(resultVO);
+        return resultVO;
     }
 
     @PostMapping("/register")
     @ResponseBody
-    public String register(@RequestParam("user_name") String userName,
-                           @RequestParam("password") String password,
-                           @RequestParam("user_image") MultipartFile file) {
+    public ResultVO<User> register(@RequestParam("user_name") String userName,
+                           @RequestParam("password") String password) {
         ResultVO<User> resultVO = new ResultVO<>();
         resultVO.setData(null);
         User user = userService.findByName(userName);
@@ -55,8 +54,7 @@ public class UserController {
             resultVO.setCode(0);
             resultVO.setMessage("注册成功");
         }
-        //TODO 文件处理
-        return VOToJson.resultVOToJson(resultVO);
+        return resultVO;
     }
 
 }

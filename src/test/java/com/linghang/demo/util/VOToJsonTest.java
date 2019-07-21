@@ -1,8 +1,6 @@
 package com.linghang.demo.util;
 
-import com.linghang.demo.VO.GoodsVO;
 import com.linghang.demo.VO.ResultVO;
-import com.linghang.demo.data.Goods;
 import com.linghang.demo.data.User;
 import com.linghang.demo.service.GoodsSevice;
 import org.junit.Test;
@@ -10,8 +8,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
