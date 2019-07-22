@@ -61,6 +61,8 @@
 > **user_name = 用户名**
 >
 > **password = 密码**
+>
+> **user_image = 图片文件**
 
 #### 返回
 
@@ -172,7 +174,7 @@
 >
 > **goods_detail = 商品详细信息**
 >
-> **goods_image = 图片信息**
+> **goods_image = 图片文件**
 
 #### 返回
 
