@@ -2,6 +2,7 @@ package com.linghang.demo.controller;
 
 import com.linghang.demo.Form.GoodsForm;
 import com.linghang.demo.VO.ResultVO;
+import com.linghang.demo.config.GlobalConfig;
 import com.linghang.demo.data.Cart;
 import com.linghang.demo.data.Goods;
 import com.linghang.demo.service.CartService;
@@ -9,9 +10,14 @@ import com.linghang.demo.service.GoodsSevice;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/goods")
@@ -29,12 +35,30 @@ public class GoodsController {
 
 
     @PostMapping("/post")
+    @ResponseBody
     public ResultVO<Goods> post(@RequestParam("user_name") String userName,
-                       @RequestParam("goods_name") String goodsName,
-                       @RequestParam("goods_price") BigDecimal goodsPrice,
-                       @RequestParam("goods_detail") String goodsDetail) {
+                                @RequestParam("goods_name") String goodsName,
+                                @RequestParam("goods_price") String goodsPrice,
+                                @RequestParam("goods_detail") String goodsDetail,
+                                @RequestParam(value = "goods_image", required = false) MultipartFile file) {
+        String goodsImageUrl = "http://" + GlobalConfig.nginxHost + "image.jpg";
+        if (file != null) {
+            String fileName = file.getOriginalFilename();
+            assert fileName != null;
+            String suffix = fileName.substring(fileName.lastIndexOf('.'));
+            fileName = UUID.randomUUID().toString() + suffix;
+            String filePath = "C:\\Users\\yzy\\Desktop\\DEMO\\src\\main\\resources\\static\\";
+            File dest = new File(filePath + fileName);
+            try {
+                file.transferTo(dest);
+                goodsImageUrl = "http://" + GlobalConfig.nginxHost + fileName;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return new ResultVO<>(1, "文件上传出错", null);
+            }
+        }
         Goods goods = new Goods();
-        GoodsForm goodsForm = new GoodsForm(0, userName, goodsName, goodsPrice, goodsDetail, "http://", 0);
+        GoodsForm goodsForm = new GoodsForm(0, userName, goodsName, BigDecimal.valueOf(Double.valueOf(goodsPrice)), goodsDetail, goodsImageUrl, 0);
         BeanUtils.copyProperties(goodsForm, goods);
         goods = goodsSevice.postGoods(goods);
         if (goods == null) {
