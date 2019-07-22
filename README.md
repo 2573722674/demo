@@ -40,7 +40,7 @@
 ```json
 {
     "code": 0,
-    "message": "头像地址"
+    "message": ""
 }
 ```
 
@@ -171,6 +171,8 @@
 > **goods_price = 商品价格**
 >
 > **goods_detail = 商品详细信息**
+>
+> **goods_image = 图片信息**
 
 #### 返回
 
